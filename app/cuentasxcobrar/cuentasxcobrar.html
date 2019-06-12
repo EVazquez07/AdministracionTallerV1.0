@@ -1,0 +1,48 @@
+<div class="top-header">
+    <h1>Cuentas por cobrar</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9"></div>
+            <div class="col-sm-3">
+                    <div class="input-group mb-3">
+                            <input type="search" ng-model="q" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <span class="input-group-text" id="basic-addon2"><i class="material-icons">
+                                    search
+                                </i></span>
+                            </div>
+                          </div>
+            </div>
+        </div>
+        <div class="list-group">
+                <div class="list-group-item list-group-item-action active" style="display: -webkit-box; background-color: #343a40!important; border-color: #343a40!important;">
+                    <div class="col-sm-2">
+                        <p class="mb-1">Folio</p>
+                  </div>  
+                  <div class="col-sm-6">
+                            <p class="mb-1">Nombre Proveedor</p>
+                    </div>
+                    <div class="col-sm-2">
+                            <p class="mb-1">Fecha</p>
+                    </div>
+                    <div class="col-sm-2">
+                            <p class="mb-1">Total</p>
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action animate-repeat" style="display: -webkit-box;" ng-repeat="cuentas in informacion.cuentas.cuentasporcobrar | filter:q as results track by cuentas.folio">
+                    <div class="col-sm-2">
+                        <p class="mb-1">{{cuentas.folio}}</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-1">{{cuentas.nombreEmpresa}}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="mb-1">{{cuentas.fecha}}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="mb-1">{{cuentas.total | number : 2}}</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

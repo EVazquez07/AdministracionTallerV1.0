@@ -1,0 +1,63 @@
+<div class="top-header">
+    <h1>Cuentas por cobrar</h1>
+    <div class="container">
+                <form ng-submit='guardar()'>
+                        <div class="form-row">
+                          <div class="form-group col-md-6" ng-init="cargarCuentas()">
+                            <label for="nombreCliente">Nombre Proveedor</label>
+                            <input type="text" name="nombreCliente" id="nombreCliente" ng-model="nombreCliente" ng-keyup="complete(nombreCliente)" class="form-control" />
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="clientedata in filterProveedor" ng-click="fillTextbox(clientedata)">{{clientedata.nombre}}</li>
+                            </ul>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <label for="inputFolio">Folio</label>
+                            <input type="text" class="form-control" id="inputFolio" ng-model="folio" placeholder="Folio">
+                          </div>
+                          <div class="form-group col-md-3">
+                                <label for="inputFecha">Fecha</label>
+                                <input type="text" class="form-control" id="inputFecha" ng-model="fecha" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6"></div>
+                          <div class="form-group col-md-3"></div>
+                          <div class="form-group col-md-3">
+                            <label for="inputTotal">Total</label>
+                            <input type="text" class="form-control" id="inputTotal" ng-model="total">
+                          </div>
+                        </div>
+                        <button class="btn btn-success" type="submit" ng-disabled="loading">
+                                <span class="spinner-border text-light spinner-border-sm" role="status" aria-hidden="true" ng-if="loading"></span>
+                                {{textoGuardar}}
+                              </button>
+                      </form>
+            <div class="separador"></div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" ng-if="error">
+                    <strong>Ay un error!</strong> Se encontro un error al registrar la cuenta por cobrar.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+    </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Aviso</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Se agrego correctamente la cuenta por cobrar
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="limpiarCampos()">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>

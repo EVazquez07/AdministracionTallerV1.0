@@ -1,0 +1,24 @@
+<div class="sidenav">
+        <div class="login-main-text">
+           <h2>Aplicación<br> Administración Taller Vázquez</h2>
+           <p>Iniciar sesion para acceder al sitio.</p>
+        </div>
+     </div>
+     <div class="main">
+        <div class="col-md-6 col-sm-12">
+           <div class="login-form">
+              <form ng-submit='login()'>
+                 <div class="form-group">
+                    <input type="email" class="form-control" ng-model='email' aria-describedby="emailHelp" placeholder="Correo electronico" required>
+                 </div>
+                 <div class="form-group">
+                    <input type="password" ng-model='password' class="form-control" placeholder="Contraseña" required>
+                 </div>
+                 <button class="btn btn-secondary" type="submit" ng-disabled="loading">
+                        <span class="spinner-border text-light spinner-border-sm" role="status" aria-hidden="true" ng-if="loading"></span>
+                        {{textoLogin}}
+                      </button>
+              </form>
+           </div>
+        </div>
+     </div>

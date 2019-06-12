@@ -1,0 +1,90 @@
+<div class="top-header">
+        <h1>Proveedores</h1>
+            <div class="container">
+                    <div class="row">
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-3">
+                                <p style="text-align: -webkit-right; margin-top: 8px;">
+                                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                        Agregar Nuevo
+                                    </button>
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                                    <div class="input-group mb-3">
+                                            <input type="search" ng-model="q" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text" id="basic-addon2"><i class="material-icons">
+                                                    search
+                                                </i></span>
+                                            </div>
+                                          </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                                <div class="collapse" id="collapseExample">
+                                        <div class="card card-body">
+                                                <div class="container">
+                                                        <form ng-submit='guardar()'>
+                                                                <div class="form-row">
+                                                                  <div class="form-group col-md-6">
+                                                                    <label for="inputNombre">Nombre</label>
+                                                                    <input type="text" ng-model='nombre'class="form-control" id="inputNombre" placeholder="Nombre" required>
+                                                                  </div>
+                                                                  <div class="form-group col-md-6">
+                                                                    <label for="inputRFC">RFC</label>
+                                                                    <input type="text" ng-model='rfc' class="form-control" id="inputRFC" placeholder="RFC" required>
+                                                                  </div>
+                                                                </div>
+                                                                <button class="btn btn-success" type="submit" ng-disabled="loading">
+                                                                        <span class="spinner-border text-light spinner-border-sm" role="status" aria-hidden="true" ng-if="loading"></span>
+                                                                        {{textoGuardar}}
+                                                                      </button>
+                                                              </form>
+                                                </div>
+                                        </div>
+                                      </div>
+                        </div>
+                    </div>
+                    <div class="separador"></div>
+                        <div class="list-group">
+                                <div class="list-group-item list-group-item-action active" style="display: -webkit-box; background-color: #343a40!important; border-color: #343a40!important;">
+                                    <div class="col-sm-9">
+                                            <p class="mb-1">Nombre Proveedores</p>
+                                    </div>
+                                    <div class="col-sm-3">
+                                            <p class="mb-1">RFC</p>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action animate-repeat" style="display: -webkit-box;" ng-repeat="proveedores in informacion.proveedores | filter:q as results track by proveedores.nombre">
+                                        <div class="col-sm-9">
+                                                <p class="mb-1">{{proveedores.nombre}}</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                                <p class="mb-1">{{proveedores.rfc}}</p>
+                                        </div>
+                                </div>
+                        </div>
+            </div>
+    </div>
+    
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalCenterTitle">Aviso</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                     {{mensaje}}
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>

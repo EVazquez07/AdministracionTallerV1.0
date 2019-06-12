@@ -1,0 +1,78 @@
+<div class="top-header">
+        <div class="container">
+        <div class="row">
+                        <div class="col-sm-8">
+                                <h1>Inicio</h1>
+                        </div>
+                        <div class="col-sm-4" style="display: -webkit-box;">
+                                <h5 style="margin-top: 20px;">Mes Actual: </h5>
+                                <h5 style="margin-top: 20px;">  {{mes}}, {{anio}}</h5>
+                        </div>
+        </div>
+        <!--<div class="row">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-3" style="text-align: -webkit-right;">
+                                <label for="repeatSelect"> Mes: </label>
+                                        <select name="repeatSelect" id="repeatSelect" ng-model="parametros.modelMes">
+                                                <option ng-repeat="mes in parametros.mesOpciones" value="{{mes.id}}">{{mes.name}}</option>
+                                        </select>
+                </div>
+                <div class="col-sm-3">
+                                <label for="repeatSelect"> Año: </label>
+                                        <select name="repeatSelect" id="repeatSelect" ng-model="parametros.modelAno">
+                                                <option ng-repeat="ano in parametros.anoOpciones" value="{{ano.id}}">{{ano.name}}</option>
+                                        </select>
+                </div>
+        </div>-->
+        <div class="row">
+                <div class="col-sm-6">
+                        <div class="card">
+                                <h4 class="card-header">Cuentas por pagar</h4>
+                                <div class="card-body">
+                                  <h5 class="card-title">IVA: </h5>
+                                  <h4 class="card-text">$ {{ ivaCXP | number : 2}}</4>
+                                  <div class="separador-line"></div>
+                                  <h5 class="card-title">Total: </h5>
+                                  <h4 class="card-text">$ {{ totalCXP | number : 2}}</4>
+                                  <div class="separador-line"></div>
+                                </div>
+                              </div>
+                </div>
+                <div class="col-sm-6">
+                        <div class="card">
+                                <h4 class="card-header">Cuentas por cobrar</h4>
+                                <div class="card-body">
+                                        <h5 class="card-title">IVA: </h5>
+                                        <h4 class="card-text">$ {{ivaCXC | number : 2}}</4>
+                                        <div class="separador-line"></div>
+                                        <h5 class="card-title">Total: </h5>
+                                        <h4 class="card-text">$ {{ totalCXC | number : 2}}</4>
+                                        <div class="separador-line"></div>
+                                </div>
+                              </div>
+                </div>
+              </div>
+    <div class="separador"></div>
+    <div class="row">
+        <div class="col-sm-12">
+                <div class="card">
+                                <h4 class="card-header">Total Impuestos</h4>
+                                <div class="card-body" style="display: -webkit-box">
+                                  <div class="col-sm-4">
+                                        <h5 class="card-title">Por pagar:</h5>
+                                        <h4 class="card-text">$ {{ ivaCXP | number : 2}}</4>
+                                  </div>
+                                  <div class="col-sm-4">
+                                        <h5 class="card-title">Por cobrar:</h5>
+                                        <h4 class="card-text">$ {{ ivaCXC | number : 2}}</4>
+                                  </div>
+                                  <div class="col-sm-4">
+                                        <h5 class="card-title">Impuestos:</h5>
+                                        <h4 class="card-text">$ {{ diferencia | number : 2}}</4>
+                                  </div>
+                                </div>
+                              </div>
+        </div>
+    </div>
+        </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "informacion" : {
+    "cuentas" : {
+      "cuentasporpagar" : [
+        {
+          "idCliente" : "01",
+          "nombreEmpresa" : "Equipo Automotriz Americana S.A. de C.V.",
+          "folio" : "A 1072",
+          "fecha" : "06/06/2019",
+          "total" : "5104"
+        }
+      ],
+      "cuentasporcobrar" : [
+        {
+          "idProveedor" : "01",
+          "nombreEmpresa" : "Energia y Servicios Coordinados S.A. de C.V.",
+          "folio" : "ENEB 195119",
+          "fecha" : "06/03/2019",
+          "total" : "3790.59"
+        }
+      ]
+    },
+    "clientes" : [
+      {
+        "id" : "01",
+        "nombre" : "Equipo Automotriz Americana S.A. de C.V.",
+        "rfc" : "EAA731217A14"
+      }
+    ],
+    "proveedores" : [
+      {
+        "id" : "01",
+        "nombre" : "Energia y Servicios Coordinados S.A. de C.V.",
+        "rfc" : "ESC1412031E8"
+      }
+    ]
+  }
+}
