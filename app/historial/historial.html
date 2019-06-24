@@ -1,0 +1,82 @@
+<div class="top-header">
+    <h1>Consultar Impuestos</h1>
+    <div class="container">
+            <form ng-submit='consultar()'>
+                    <div class="form-row">
+                      <div class="form-group col-md-3">
+                            <label for="inputMes">Numero Mes</label>
+                            <input type="text" class="form-control" id="inputMes" ng-model="mes" placeholder="MM" required>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="inputAnio">Numero Año</label>
+                        <input type="text" class="form-control" id="inputAnio" ng-model="anio" placeholder="YYYY" required>
+                      </div>
+                      <div class="form-group col-md-3"></div>
+                      <div class="form-group col-md-3"></div>
+                    </div>
+                    <button class="btn btn-success" type="submit" ng-disabled="loading">
+                            <span class="spinner-border text-light spinner-border-sm" role="status" aria-hidden="true" ng-if="loading"></span>
+                            {{textoConsultar}}
+                          </button>
+                  </form>
+                  <div class="separador"></div>
+        <div class="list-group" ng-if="historial.length > 0">
+                <div class="list-group-item list-group-item-action active" style="display: -webkit-box; background-color: #343a40!important; border-color: #343a40!important;">
+                    <div class="col-sm-3">
+                        <p class="mb-1">Mes/Año</p>
+                  </div>
+                  <div class="col-sm-3">
+                        <p class="mb-1">Total Pagado</p>
+                  </div> 
+                  <div class="col-sm-3">
+                        <p class="mb-1">Total Gastos</p>
+                  </div>   
+                  <div class="col-sm-3">
+                            <p class="mb-1">Total Impuestos</p>
+                    </div>
+                </div>
+                <div class="list-group-item list-group-item-action animate-repeat" style="display: -webkit-box;" ng-repeat="impuesto in historial">
+                    <div class="col-sm-3">
+                        <p class="mb-1">{{impuesto.mesanio}}</p>
+                    </div>
+                    <div class="col-sm-3">
+                            <p class="mb-1">{{impuesto.pagado | number : 2}}</p>
+                    </div>
+                    <div class="col-sm-3">
+                            <p class="mb-1">{{impuesto.gastos | number : 2}}</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="mb-1">{{impuesto.impuestos | number : 2}}</p>
+                    </div>
+                </div>
+        </div>
+        <div class="separador"></div>
+        <div class="row" ng-if="historial.length == 0">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <p style="text-align: -webkit-center;">No hay resultados por mostrar</p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Aviso</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                No hay información para mostrar
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="limpiarCampos()">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>

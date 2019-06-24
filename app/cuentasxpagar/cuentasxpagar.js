@@ -24,20 +24,12 @@ angular.module('myApp.cuentasxpagar', ['ngRoute'])
     obj.$loaded().then(function() {
 
       angular.forEach(obj, function(value, key) {
-        console.log("Value -> ", value);
          if(key == "informacion")
          {
            value.cuentas.cuentasporpagar = convertToArray(value.cuentas.cuentasporpagar);
            $scope.informacion = value;
          }
-     });   
-
-      console.log("Data -> ", $scope.informacion);
-      console.log("Data C-> ", $scope.informacion.clientes);
-      console.log("Data P-> ", $scope.informacion.proveedores);
-      console.log("Data CN-> ", $scope.informacion.cuentas);
-      console.log("Data CNXP-> ", $scope.informacion.cuentas.cuentasporpagar);
-      console.log("Data CNXC-> ", $scope.informacion.cuentas.cuentasporcobrar);
+     });  
 
     });
 

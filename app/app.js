@@ -9,6 +9,7 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.clientes',
   'myApp.proveedores',
+  'myApp.historial',
   'myApp.version',
   'firebase',
   'ngStorage'
@@ -55,6 +56,10 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     .when("/cuentasxpagarnuevo", {
       templateUrl: "cuentasxpagar/cuentasxpagarnuevo.html",
       controller : "cuentasxpagarnuevoCtrl"
+    })
+    .when("/consultarimpuestos", {
+      templateUrl: "historial/historial.html",
+      controller : "historialCtrl"
     })
     .otherwise({
         redirectTo: "/login"

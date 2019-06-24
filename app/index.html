@@ -57,6 +57,9 @@
                     <a class="dropdown-item" href="#!/cuentasxcobrar">Ver cuentas</a>
                   </div>
                 </li>
+              <li class="nav-item" ng-if="login">
+                  <a class="nav-link" href="#!/consultarimpuestos">Consultar impuestos <span class="sr-only">(current)</span></a>
+              </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <a class="btn btn-outline-success my-2 my-sm-0" href="#!/login" ng-if="!login">Iniciar Sesion</a>
@@ -113,6 +116,7 @@
   <script src="home/home.js"></script>
   <script src="clientes/clientes.js"></script>
   <script src="proveedores/proveedores.js"></script>
+  <script src="historial/historial.js"></script>
   <script src="core/version/version.js"></script>
   <script src="core/version/version-directive.js"></script>
   <script src="core/version/interpolate-filter.js"></script>
